@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/4909e24446.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+	body{
+		text-align: center;
+		background-color: skyblue;
+		color: red;
+		background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+
+	}
+	#app{
+			padding: 1%;
+		}
+	.listtype{
+		list-style: none;
+	}
+	#but{
+		padding: 1%;
+	}
+	.one{
+		background-color: white;
+		width: 20%;
+		justify-content: center;
+		align-content: center;
+	}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	function display(){
+		 let appdown=document.getElementById("app").value,todolist=[]
+		 if(appdown===""){
+		 	alert("enter a value")
+		 }
+		 	else{
+		 		add(appdown)
+		 	}
+		 todolist.push("appdown")
+		 //add(appdown)
+		 //console.log(todolist)
+		 document.getElementById("app").value="" 
+	}
+	function add(appdown){
+		let ul=document.querySelector("ul")
+		console.log(ul)
+		let li=document.createElement("li")
+		li.innerHTML=`
+		<span>${appdown}</span>
+		<i class="fa-solid fa-rectangle-xmark"></i>`
+		li.classList.add("listtype")
+		ul.appendChild(li)
+	}
+</script> 
+<section class="one">
+	<input id="app" type="text" placeholder="enter name">
+<ul>
+	<!-- <li>hi</li>
+	<li>how are you</li> -->
+</ul>
+
+<button id="but" onclick="display()">submit</button>
+</section>
+
+</body>
+</html>
